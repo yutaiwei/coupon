@@ -1,0 +1,411 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide {
+    display: none !important;
+}
+
+.header-bgcolor {
+    background-color: rgba(242, 117, 8, 1)
+}
+
+.unused .unused-left .discount{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+}
+.nav-back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 44px;
+    font-size: 22px;
+    color: white;
+    background-color: transparent;
+    width: 40px;
+    text-align: center;
+}
+
+.tab-item {
+    overflow: inherit;
+}
+
+.tabs-white .tabs {
+    height: 46px;
+    background: #fff;
+    color: #000;
+    border-bottom: 1px solid #e7e8ea;
+}
+
+.tabs-white .tab-item {
+    line-height: 45px;
+    opacity: 1;
+}
+
+.tabs-white .tab-item-active .tab-title {
+    display: inline-block;
+    height: 46px;
+    color: #fe623e;
+    border-bottom: 2px solid #fe623e;
+    padding: 0 7px;
+}
+#abs .tabs{
+    top:0;
+}
+.tabs-top.tabs-striped .tab-item.tab-item-active {
+    margin-top: 0;
+    border-width: 0 0 0 0 !important;
+}
+
+.tabs-top.tabs-striped .tab-item.activated {
+    margin-top: 0;
+    border-width: 0 0 0 0 !important;
+}
+
+/*未使用*/
+
+.unused {
+    margin: 2.67%;
+}
+
+.unuseds {
+    position: relative;
+    height: 95px;
+
+}
+
+.unused-y {
+    background: url(../couponImg/u1-2.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.unused-i {
+    background: url(../couponImg/u1-1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.unused-j {
+    background: url(../couponImg/u1-3.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.used-coupon{
+    background: url(../couponImg/u1-4.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.unused img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    vertical-align: top;
+}
+
+.unused-left {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 38.7%;
+    height: 96px;
+
+}
+
+.unused-left span {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+}
+
+/*满减卷*/
+.coupon span:nth-child(1) {
+    top: 36%;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+
+.coupon span:nth-child(1) span {
+    position: static;
+    font-size: 15px;
+    margin-right: 6px;
+}
+
+.coupon span:nth-child(2) {
+   width: 100%;
+    text-align: center;
+    bottom: 9.4%;
+    font-size: 12px;
+}
+
+/*产品卷*/
+.product span:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 26px;
+}
+
+.product span:nth-child(1) span {
+    position: static;
+    font-size: 15px;
+    margin-right: 6px;
+}
+
+/*加息卷*/
+.interest span:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+
+.unused-right {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 61.3%;
+    height: 96px;
+}
+
+.unused-right > div {
+    position: absolute;
+    font-size: 12px;
+}
+
+.unused-right .net-1 {
+    top: 15px;
+    left: 6.5%;
+    width: 88%;
+    line-height: 14px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #606060;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+
+.unused-right .btn {
+    top: 38%;
+    right: 4%;
+    width: 66px;
+    height: 22px;
+    font-size: 10px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50px;
+}
+@media screen and (max-width: 320px) {
+    .unused-right .btn {
+        top: 38%;
+        right: 4%;
+        width: 60px;
+        height: 20px;
+        font-size: 10px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 50px;
+    }
+}
+
+
+.unused-right .net-3 {
+    left: 6.5%;
+    top:40%;
+    font-size: 10px;
+    color: #929292;
+}
+
+@media screen and (max-width: 320px) {
+    .unused-right .net-3  {
+        left: 6.5%;
+        top:40%;
+        font-size: 9px;
+        color: #929292;
+    }
+}
+
+.unused-right .down {
+    left: 6.5%;
+    bottom: 0;
+    width: 87%;
+    height: 28%;
+    line-height: 25px;
+    color: #a2a2a2;
+}
+
+.unused-right .down i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 15px;
+    height: 15px;
+    background-size: 100% 100%;
+}
+
+.down-r {
+    background: url(../couponImg/u3-1.png) no-repeat;
+}
+
+.down-t {
+    background: url(../couponImg/u3-2.png) no-repeat;
+}
+
+.unused .unused-right .subClass, .unused .unused-right .subClassy {
+    display: inline-block;
+    width: 38px;
+    height: 16px;
+    text-align: center;
+    line-height: 17px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #fff;
+    margin-right: 6px;
+}
+
+/*立即使用*/
+
+.ig {
+    background: #fe623e;
+}
+
+.yzt {
+    background: #008e5b;
+}
+
+.jd {
+    background: #c60c1b;
+}
+
+.green {
+    color: #008e5b;
+    border: 1px solid #008e5b;
+}
+
+.orange {
+    color: #fe623e;
+    border: 1px solid #fe623e;
+}
+
+.red {
+    color: #c60c1b;
+    border: 1px solid #c60c1b;
+}
+
+.unused .mask {
+    height: 66px;
+    background: url(../couponImg/u4.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.unused .mask-pc {
+    width: 100%;
+    padding: 8px 18px;
+}
+
+.unused .mask-pc p {
+    color: #626262;
+    line-height: 24px;
+    font-size: 12px;
+    /*在p描述的第二行写一个省略号*/
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+/*已使用*/
+.used .img {
+    top: 10px;
+    right: 7%;
+    width: 59px;
+    height: 58px;
+    z-index: 5;
+}
+
+.used .unused-right .subClassy {
+    background: #c2c2c2;
+}
+
+.used-text {
+    font-size: 14px;
+    text-align: center;
+    margin: 40px 62px 60px;
+}
+
+.used-text a {
+    color: #000;
+    text-decoration: none;
+}
+
+.rule div {
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 6%;
+}
+
+.rule p {
+    margin: 0;
+    line-height: 20px;
+}
+
+/*mobiscroll*/
+
+.md-dialog {
+    width: 260px;
+    height: 250px;
+    margin: 0 auto;
+    min-height: 200px;
+    text-align: center;
+}
+
+.md-dialog svg {
+    max-height: 80px;
+}
+
+.svg_size {
+    max-height: 100px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotation {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rotation {
+    from {
+        -o-transform: rotate(0deg);
+    }
+    to {
+        -o-transform: rotate(360deg);
+    }
+}

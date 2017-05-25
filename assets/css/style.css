@@ -1,0 +1,222 @@
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, Roboto, 'Droid Sans', "Lucida Grande", sans-serif;
+}
+
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  text-align: center;
+  font-weight: 300;
+}
+
+.box  {
+  height: 100%;
+}
+.box h1  {
+  color: #fff;
+}
+
+.blue {
+  background-color: #4a87ee;
+}
+.yellow {
+  background-color: #f0b840;
+}
+.pink {
+  background-color: #8a6de9;
+}
+
+.pink a {
+  right:0;
+}
+
+.btn-start {
+  top: initial;
+  bottom : 40px;
+  width: 100px;
+  margin:0 auto;
+  display:block;
+}
+
+.selected {
+  background-color: #d2dced;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Roboto Thin'), local('Roboto-Thin'), url(roboto_thin.woff2) format('woff2'), url(roboto_thin.woff) format('woff');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url(roboto_light.woff2) format('woff2'), url(roboto_light.woff) format('woff');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(roboto.woff2) format('woff2'), url(roboto.woff) format('woff');
+}
+
+.text-muted{
+    color:#ccc;
+}
+
+.bar-footer {
+    background:none;
+    margin: 0 0 10px 0;
+}
+
+.bar-footer .button.button-clear .icon:before {
+    color:rgba(255,255,255,0.6);
+    font-size:1.1em;
+}
+
+.bar-footer .button.button-clear .icon.ion-android-lock:before,
+.bar-footer .button.button-clear .icon.ion-ios-arrow-back:before{
+    font-size:1.3em;
+}
+
+.standby {
+    background: url('../img/background.jpg') no-repeat 0 0;
+    background-size: cover;
+    background-position: center center;
+
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.standby .view-container{
+    background: transparent;
+}
+
+.standby .notifications.pane{
+    background:rgba(0,0,0,0.6);
+}
+
+.screenlock.pane {
+    background:rgba(0,0,0,0.8);
+}
+
+/* === Notifications === */
+.notifications .date-time-widget {
+    position:absolute;
+    width:100%;
+    top:20%;
+    left:0;
+    color:#fff;
+}
+
+.notifications .date-time-widget .time {
+    margin-bottom:5px;
+    font-weight:100;
+    font-size:7em;
+    line-height:1em;
+}
+
+.notifications .date-time-widget .date {
+    font-size:1em;
+    line-height:1em;
+}
+
+.notifications .date-time-widget .icon{
+    margin:0 5px;
+}
+
+/* === Screenlock === */
+.combination-wrap {
+    position:absolute;
+    bottom:11%;
+    left:0;
+    width:100%;
+}
+
+.combination {
+    /*border:1px solid rgba(255,255,255,0.2);*/
+}
+
+.screenlock.finished .line,
+.screenlock.finished .point.active span{
+    background:#DD5825;
+}
+
+.line {
+    position:absolute;
+    width:4px;
+    background:#fff;
+    border-radius:4px;
+    transform-origin: top left;
+}
+
+.lock-result {
+    color:#fff;
+    font-size: 1em;
+    font-weight:400;
+}
+
+.point {
+    position:relative;
+    width:9vw;
+    height:9vw;
+    margin:7vw auto;
+    padding:0;
+    font-size:0;
+    line-height:0;
+    /*border:1px solid rgba(255,255,255,0.2);*/
+    border-radius:100%;
+}
+
+.point span {
+    display:block;
+    position:absolute;
+    top:30%;
+    left:30%;
+    width:40%;
+    height:40%;
+    background:#fff;
+    border-radius: 100%;
+}
+
+.point.active span {
+    /*background:#DD5825;*/
+    animation-name: blob;
+    animation-duration:0.15s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: blob;
+    -webkit-animation-duration:0.15s;
+    -webkit-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes blob {
+    0%   {left:25%; top:25%;width:50%;height:50%;}
+    50%  {left:12%; top:12%;width:76%;height:76%;}
+    100% {left:25%; top:25%;width:50%;height:50%;}
+}
+
+@keyframes blob {
+    0%   {left:25%; top:25%;width:50%;height:50%;}
+    50%  {left:12%; top:12%;width:76%;height:76%;}
+    100% {left:25%; top:25%;width:50%;height:50%;}
+}
+
+.emergency {
+    position:absolute;
+    bottom:8%;
+    width:100%;
+    font-size:1em;
+    text-transform:uppercase;
+    color: rgba(255,255,255,0.8);
+}
+.count_tilte_bar{
+    background: #f0f0f0;
+    text-align: left;
+    text-indent: 5%;
+}
+.count_button_all{
+    height: 40px;
+    border: none;
+    float: left;
+}

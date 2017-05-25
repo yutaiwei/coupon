@@ -1,0 +1,46 @@
+<ion-view>
+    <!--头部-->
+    <ion-header-bar align-title="center" class="header-bgcolor" ng-if="channel=='App'">
+        <!-- 头部-->
+        <a href="#/main/" class="nav-back">
+            <i class=" ion-chevron-left"></i>
+        </a>
+        <h1 class="title" style="color:#fff;">我的优惠券</h1>
+    </ion-header-bar>
+    <!--内容-->
+    <ng-form name="ProposalForm">
+        <ion-content style="background:#fff;margin: 6% 7.3%;top:{{channel=='weixin'?'0':'44px'}}">
+            <div class="rule">
+                <div>
+                    <p> Q1：如何获取优惠券？</p>
+                    <p> 人寿客户节期间参与以下活动有机会获得优惠券： </p>
+                    <p> • 通过参加AR扫红包活动获得 </p>
+                    <p> • 通过参加登山大挑战获得 </p>
+                    <p> • 通过参加幸运大转盘抽奖获得 </p>
+                    <p> • 通过淘宝、蚂蚁店铺等平台获得 </p>
+                </div>
+                <div>
+                    <p> Q2：优惠券如何使用？ </p>
+                    <p> • 优惠券仅限在掌上国寿APP购买相应产品使用； </p>
+                    <p> • 每个订单只能使用一张优惠券，每天使用次数不限； </p>
+                    <p> • 每个优惠券只能使用一次，不能叠加或拆分使用； </p>
+                    <p> • 优惠券如有使用金额门槛，则购物车金额需满足金额门槛才可使用； </p>
+                    <p> • 优惠券如有品类限制，产品需满足对应条件后才可使用优惠券； </p>
+                    <p> • 优惠券使用不找零，如可抵扣金额大于订单金额，则订单需支付0.01元。 </p>
+                </div>
+                <div>
+                    <p> Q3:下单的时候使用了优惠券，但是后来订单取消了，优惠券还会返还吗？ </p>
+                    <p> • 会的，订单无效后优惠券自动返还到您的账户里。 </p>
+                </div>
+
+                <div>
+                    <p> Q4:如有其它问题，怎么办？</p>
+                    <p> • 请联系我们的客服，客服热线：95519 </p>
+                </div>
+
+
+            </div>
+        </ion-content>
+    </ng-form>
+</ion-view>
+
