@@ -1,10 +1,7 @@
 define([
     'app',
 ], function (app) {
-    app.config([ '$stateProvider','$urlRouterProvider','$$utilsProvider',function($stateProvider, $urlRouterProvider,$$utilsProvider) {
-
-        $$utilsProvider.useIonicLoading(true);
-        $$utilsProvider.setIgnoreLoadingList('qryCoupon');
+    app.config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider
             .when('', '/');
@@ -30,5 +27,5 @@ define([
                     }
                 }
             })
-    }]);
+    });
 });

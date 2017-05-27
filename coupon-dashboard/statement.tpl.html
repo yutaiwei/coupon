@@ -11,115 +11,144 @@
     <ng-form name="ProposalForm">
         <ion-tabs id="{{channel=='weixin'?'abs':' '}}" class="tabs-white tabs-top ">
             <!--未使用-->
-            <ion-tab title="未使用({{unusedLength==null?0:unusedLength}})">
+            <ion-tab title="未使用({{vm.length.unusedLength==null?0:vm.length.unusedLength}})">
                 <ion-content style=" background: #f1f1f1;padding-top:{{channel=='weixin'?'46px':'92px'}}">
-                    <div class="unused"  ng-repeat="item in unuseds track by $index">
-                        <div class="{{item.productCode=='YZT'?'unuseds unused-y':item.productCode=='IG'?'unuseds unused-i':'unuseds unused-j'}}" >
-                                <div class="unused-left">
-                                    <!--满减券-->
-                                    <div ng-if="item.typeCode==3?false:true" class=" coupon">
-                                        <span ng-if="item.bonusSubType==22?false:true"> <span>¥</span>{{item.voucherValue}}</span>
-                                        <span class="{{item.bonusSubType==22?'discount':''}}" >{{item.discription}}</span>
-                                    </div>
+                    <div class="unused" ng-repeat="item in vm.data.unuseds track by $index">
+                        <div class="{{item.productCode=='YZT'?'unuseds unused-y':item.productCode=='IG'?'unuseds unused-i':'unuseds unused-j'}}">
+                            <div class="unused-left">
+                                <!--满减券-->
+                                <div ng-if="item.typeCode==3?false:true" class=" coupon">
+                                    <span ng-if="item.bonusSubType==22?false:true"> <span>¥</span>{{item.voucherValue}}</span>
+                                    <span class="{{item.bonusSubType==22?'discount':''}}">{{item.discription}}</span>
+                                </div>
 
-                                    <!--加息券-->
-                                    <div ng-if="item.typeCode==3?true:false"  class=" interest">
-                                        <span>加息券</span>
-                                    </div>
+                                <!--加息券-->
+                                <div ng-if="item.typeCode==3?true:false" class=" interest">
+                                    <span>加息券</span>
                                 </div>
-                                <div class="unused-right">
-                                    <div class="net-1"> <div class="{{item.productCode=='YZT'?'subClass yzt':item.productCode=='IG'?'subClass ig':'subClass jd'}}">{{item.typeCode=='1'?'红包':item.typeCode=='2'?'优惠券':item.typeCode=='3'?'加息券':item.typeCode=='4'?'i购':"京东"}}</div>{{item.couponName}}</div>
-                                    <div class="{{item.productCode=='YZT'? 'btn green':item.productCode=='IG'?'btn orange':'btn red'}}" ng-click="submit(item)">立即使用</div>
-                                    <div class="net-3">{{item.validDate}}</div>
-                                    <div class="down" ng-click="item.mask=!item.mask">
-                                        <span >详细信息</span>
-                                        <i ng-click="item.mask=!item.mask" class="{{item.mask==false?'down-r':'down-t'}}"></i>
+                            </div>
+                            <div class="unused-right">
+                                <div class="net-1">
+                                    <div
+                                        class="{{item.productCode=='YZT'?'subClass yzt':item.productCode=='IG'?'subClass ig':'subClass jd'}}">
+                                        {{item.typeCode=='1'?'红包':item.typeCode=='2'?'优惠券':item.typeCode=='3'?'加息券':item.typeCode=='4'?'i购':"京东"}}
                                     </div>
+                                    <div class="couponName"><div class="couname">{{item.couponName}}</div></div>
+
                                 </div>
+                                <div
+                                    class="{{item.productCode=='YZT'? 'btn green':item.productCode=='IG'?'btn orange':'btn red'}}"
+                                    ng-click="submit(item)">立即使用
+                                </div>
+                                <div class="net-3">{{item.validDate}}</div>
+                                <div class="down"  >
+                                    <span ng-click="mask($event,item)">详细信息</span>
+                                    <i  ng-click="mask($event,item)"
+                                       class="{{item.mask==false?'down-r':'down-t'}}"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div  ng-init="item.mask=false" ng-show="item.mask" class="mask">
+                        <div ng-init="item.mask=false" ng-show="item.mask" class="mask">
                             <div class="mask-pc">
                                 <p>{{item.detailInfo!=''?item.detailInfo:'该优惠券没有详细信息'}}</p>
                             </div>
                         </div>
                     </div>
-                    <div ng-if="text=='text0'" class="used-text">
+                    <div ng-if="text0=='text0'" class="used-text">
                         <a href="#/dashboard">优惠券说明</a>
                     </div>
+                    <ion-infinite-scroll ng-if="!vm.is.unused" on-infinite="vm.unuseds()" distance="10%" ></ion-infinite-scroll>
                 </ion-content>
             </ion-tab>
             <!-- 已使用-->
-            <ion-tab title="已使用({{usedLength==null?0:usedLength}})">
+            <ion-tab title="已使用({{vm.length.usedLength==null?0:vm.length.usedLength}})">
                 <ion-content style=" background: #f1f1f1;padding-top:{{channel=='weixin'?'46px':'92px'}}">
-                    <div class="unused used" ng-repeat="item in useds  track by $index">
+                    <div class="unused used" ng-repeat="item in vm.data.useds  track by $index">
                         <div class="unuseds used-coupon">
                             <div class="unused-left">
                                 <!--满减券-->
                                 <div ng-if="item.typeCode==3?false:true" class=" coupon">
                                     <span ng-if="item.bonusSubType==22?false:true"> <span>¥</span>{{item.voucherValue}}</span>
-                                    <span class="{{item.bonusSubType==22?'discount':''}}" >{{item.discription}}</span>
+                                    <span class="{{item.bonusSubType==22?'discount':''}}">{{item.discription}}</span>
                                 </div>
                                 <!--加息券-->
-                                <div  ng-if="item.typeCode==3?true:false" class=" interest">
+                                <div ng-if="item.typeCode==3?true:false" class=" interest">
                                     <span>加息券</span>
                                 </div>
                             </div>
                             <div class="unused-right">
-                                <div class="net-1"><div class="subClassy">{{item.typeCode=='1'?'红包':item.typeCode=='2'?'优惠券':item.typeCode=='3'?'加息券':item.typeCode=='4'?'i购':"京东"}}</div>{{item.couponName}}</div>
+                                <div class="net-1">
+                                    <div class="subClassy">
+                                        {{item.typeCode=='1'?'红包':item.typeCode=='2'?'优惠券':item.typeCode=='3'?'加息券':item.typeCode=='4'?'i购':"京东"}}
+                                    </div>
+                                    <div class="couponName"><div class="couname">{{item.couponName}}</div></div>
+
+                                </div>
                                 <div class="img"><img src="assets/couponImg/u5.png"></div>
                                 <div class="net-3">{{item.validDate}}</div>
-                                <div class="down"  ng-click="item.mask=!item.mask">
-                                    <span class="down-l">详细信息</span>
-                                    <i  ng-click="item.mask=!item.mask" class="{{item.mask==false?'down-r':'down-t'}}"></i>
+                                <div class="down" >
+                                    <span ng-click="mask($event,item)" class="down-l">详细信息</span>
+                                    <i  ng-click="mask($event,item)"
+                                       class="{{item.mask==false?'down-r':'down-t'}}"></i>
                                 </div>
                             </div>
                         </div>
-                        <div   ng-init="item.mask=false" ng-show="item.mask" class="mask">
+                        <div ng-init="item.mask=false" ng-show="item.mask" class="mask">
                             <div class="mask-pc">
                                 <p>{{item.detailInfo!=''?item.detailInfo:'该优惠券没有详细信息'}}</p>
                             </div>
                         </div>
                     </div>
-                    <div ng-if="text1=='text1'" class="used-text ">
+                    <div ng-if="text1=='text1'"  class="used-text ">
                         <a href="#/dashboard">优惠券说明</a>
                     </div>
+                    <ion-infinite-scroll ng-if="!vm.is.used" on-infinite="vm.useds()" distance="10%"></ion-infinite-scroll>
                 </ion-content>
             </ion-tab>
             <!--已过期-->
-            <ion-tab title="已过期({{expiredLength==null?'0':expiredLength}})">
+            <ion-tab title="已过期({{vm.length.expiredLength==null?0:vm.length.expiredLength}})">
                 <ion-content style=" background: #f1f1f1;padding-top:{{channel=='weixin'?'46px':'92px'}}">
-                    <div class="unused used" ng-repeat="item in expireds  track by $index">
+                    <div class="unused used" ng-repeat="item in vm.data.expireds  track by $index">
                         <div class="unuseds used-coupon">
                             <div class="unused-left">
                                 <!--满减券-->
                                 <div ng-if="item.typeCode==3?false:true" class=" coupon">
                                     <span ng-if="item.bonusSubType==22?false:true"> <span>¥</span>{{item.voucherValue}}</span>
-                                    <span class="{{item.bonusSubType==22?'discount':''}}" >{{item.discription}}</span>
+                                    <span class="{{item.bonusSubType==22?'discount':''}}">{{item.discription}}</span>
                                 </div>
                                 <!--加息券-->
-                                <div  ng-if="item.typeCode==3?true:false" class=" interest">
+                                <div ng-if="item.typeCode==3?true:false" class=" interest">
                                     <span>加息券</span>
                                 </div>
                             </div>
                             <div class="unused-right">
-                                <div class="net-1"><div class="subClassy">{{item.typeCode=='1'?'红包':item.typeCode=='2'?'优惠券':item.typeCode=='3'?'加息券':item.typeCode=='4'?'i购':"京东"}}</div>{{item.couponName}}</div>
+                                <div class="net-1">
+                                    <div class="subClassy">
+                                        {{item.typeCode=='1'?'红包':item.typeCode=='2'?'优惠券':item.typeCode=='3'?'加息券':item.typeCode=='4'?'i购':"京东"}}
+                                    </div>
+                                    <div class="couponName"><div class="couname">{{item.couponName}}</div></div>
+
+                                </div>
                                 <div class="img"><img src="assets/couponImg/u6.png"></div>
                                 <div class="net-3">{{item.validDate}}</div>
-                                <div class="down"  ng-click="item.mask=!item.mask">
-                                    <span class="down-l">详细信息</span>
-                                    <i  ng-click="item.mask=!item.mask" class="{{item.mask==false?'down-r':'down-t'}}"></i>
+                                <div class="down">
+                                    <span  ng-click="mask($event,item)" class="down-l">详细信息</span>
+                                    <i ng-click="mask($event,item)"
+                                       class="{{item.mask==false?'down-r':'down-t'}}"></i>
                                 </div>
                             </div>
                         </div>
-                        <div   ng-init="item.mask=false" ng-show="item.mask" class="mask">
+                        <div ng-init="item.mask=false" ng-show="item.mask" class="mask">
                             <div class="mask-pc">
                                 <p>{{item.detailInfo!=''?item.detailInfo:'该优惠券没有详细信息'}}</p>
                             </div>
                         </div>
                     </div>
-                    <div ng-if="text2=='text2'" class="used-text">
+                    <div ng-if="text2=='text2'"  class="used-text">
                         <a href="#/dashboard">优惠券说明</a>
                     </div>
+                    <ion-infinite-scroll ng-if="!vm.is.expired" on-infinite="vm.expireds()"
+                                         distance="10%"></ion-infinite-scroll>
                 </ion-content>
             </ion-tab>
         </ion-tabs>
@@ -136,8 +165,9 @@
                 <path fill="none" stroke="#A9180E" stroke-miterlimit="10" d="M12.391,10.321l15.219,19.358"/>
             </svg>
             <p class="md-text-center" style="color:black">{{errMsg}}</p>
-            <div style="border: 1px solid #606060;width: 100px;height: 40px;" class="button payButton" ng-click=" demo.hide()">
-               确定
+            <div style="border: 1px solid #606060;width: 100px;height: 40px;" class="button payButton"
+                 ng-click=" demo.hide()">
+                确定
             </div>
 
         </div>

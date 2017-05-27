@@ -12,12 +12,13 @@
     background-color: rgba(242, 117, 8, 1)
 }
 
-.unused .unused-left .discount{
+.unused .unused-left .discount {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 17px;
 }
+
 .nav-back {
     position: absolute;
     top: 0;
@@ -48,15 +49,18 @@
 }
 
 .tabs-white .tab-item-active .tab-title {
-    display: inline-block;
+    display: inline-block !important;
     height: 46px;
     color: #fe623e;
     border-bottom: 2px solid #fe623e;
-    padding: 0 7px;
+    padding: 0 5px;
+    margin: 0 !important;
 }
-#abs .tabs{
-    top:0;
+
+#abs .tabs {
+    top: 0;
 }
+
 .tabs-top.tabs-striped .tab-item.tab-item-active {
     margin-top: 0;
     border-width: 0 0 0 0 !important;
@@ -94,7 +98,7 @@
     background-size: 100% 100%;
 }
 
-.used-coupon{
+.used-coupon {
     background: url(../couponImg/u1-4.png) no-repeat;
     background-size: 100% 100%;
 }
@@ -136,7 +140,7 @@
 }
 
 .coupon span:nth-child(2) {
-   width: 100%;
+    width: 100%;
     text-align: center;
     bottom: 9.4%;
     font-size: 12px;
@@ -172,64 +176,56 @@
     height: 96px;
 }
 
+.unused-right .couponName {
+    position: absolute;
+    left: 25%;
+    width: 76%;
+    height: 100%;
+    line-height: 18px;
+    overflow: hidden;
+}
+.unused-right .couname{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
 .unused-right > div {
     position: absolute;
     font-size: 12px;
 }
 
 .unused-right .net-1 {
-    top: 15px;
+    top: 4px;
     left: 6.5%;
     width: 88%;
-    line-height: 14px;
-    font-weight: 500;
+    height: 40%;
     font-size: 14px;
-    color: #606060;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap
 }
 
-
 .unused-right .btn {
-    top: 38%;
+    top: 44%;
     right: 4%;
     width: 66px;
     height: 22px;
-    font-size: 10px;
+    z-index: 10;
+    _font-size: 10px;
     line-height: 22px;
     text-align: center;
     border-radius: 50px;
 }
-@media screen and (max-width: 320px) {
-    .unused-right .btn {
-        top: 38%;
-        right: 4%;
-        width: 60px;
-        height: 20px;
-        font-size: 10px;
-        line-height: 20px;
-        text-align: center;
-        border-radius: 50px;
-    }
-}
+
 
 
 .unused-right .net-3 {
     left: 6.5%;
-    top:40%;
-    font-size: 10px;
+    top: 46%;
+    font-size: 12px;
     color: #929292;
 }
 
-@media screen and (max-width: 320px) {
-    .unused-right .net-3  {
-        left: 6.5%;
-        top:40%;
-        font-size: 9px;
-        color: #929292;
-    }
-}
 
 .unused-right .down {
     left: 6.5%;
@@ -259,7 +255,9 @@
 }
 
 .unused .unused-right .subClass, .unused .unused-right .subClassy {
-    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
     width: 38px;
     height: 16px;
     text-align: center;
@@ -337,7 +335,7 @@
 .used-text {
     font-size: 14px;
     text-align: center;
-    margin: 40px 62px 60px;
+    margin: 40px 62px 40px;
 }
 
 .used-text a {
@@ -348,7 +346,7 @@
 .rule div {
     color: #000;
     font-size: 12px;
-    margin-bottom: 6%;
+    margin: 6%;
 }
 
 .rule p {
@@ -407,5 +405,27 @@
     }
     to {
         -o-transform: rotate(360deg);
+    }
+}
+@media screen and (max-width: 320px) {
+    .unused-right .btn {
+        top: 44%;
+        right: 4%;
+        width: 60px;
+        height: 20px;
+        z-index: 10;
+        font-size: 10px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 50px;
+    }
+    .unused-right .couponName{
+        left: 28%;
+    }
+    .unused-right .net-3 {
+        left: 6.5%;
+        top: 46%;
+        font-size: 10px;
+        color: #929292;
     }
 }
